@@ -146,20 +146,22 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
     margin: 0 0 4px;
   }
 
-  /* Hero self-hosted video (V3) — responsive, native minimal controls (play/pause + timeline), no YouTube UI */
+  /* Hero embedded video (V3) — responsive 16:9, scales to the column on every device */
   .hero-video{
+    position: relative;
     width: 100%;
     max-width: 640px;
+    aspect-ratio: 16 / 9;
     margin: 14px 0 20px;
     border-radius: var(--r);
     overflow: hidden;
     background: #000;
     box-shadow: var(--shadow-md);
   }
-  .hero-video video{
-    display: block;
-    width: 100%;
-    height: auto;
+  .hero-video iframe{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
   }
   @media (max-width: 700px){
     .hero-video{ max-width: 100%; margin-inline: auto; }
@@ -746,9 +748,10 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
           <p class="kicker">Bezmaksas tiešsaistes vebinārs</p>
 
           <div class="hero-video">
-            <video controls playsinline preload="metadata">
-              <source src="hero.mp4" type="video/mp4" />
-            </video>
+            <iframe src="https://www.youtube.com/embed/br3Z7-l5gOk?rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&controls=0"
+              title="Vebināra video" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
 
           <h1>Apgūsti angļu valodu <br>2–3x ātrāk</h1>
