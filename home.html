@@ -706,7 +706,10 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
   /* ===== Desktop-only fine-tuning ===== */
   @media (min-width: 961px){
     .zoom-mark{ margin-left: 120px; }   /* sit further to the right of the date */
-    .right-col{ margin-top: 32px; }     /* nudge the photo / date column down a little */
+    /* V3: on desktop, put the countdown ABOVE the pasniedzēji photo and keep them close together
+       (phone view keeps photo-on-top order, untouched). */
+    .right-col{ margin-top: 32px; justify-content: flex-start; gap: 16px; }
+    .red-box{ order: -1; margin: 0; top: 0; }   /* swap to top + remove the big auto-margin gap */
   }
 
   /* ============================ A11Y / MOTION ============================ */
