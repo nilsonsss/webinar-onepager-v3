@@ -1098,6 +1098,7 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
       email: emailEl.value.trim(),
       phone: phoneEl.value.trim(),
       consent: consentEl.checked ? 'yes' : '',
+      source: 'v3',   // kura lapa (V3 = noslepumi.maciesvalodas.lv) -> atsevišķa Sheet cilne
     });
 
     showView('loading');   // spinner while we send
