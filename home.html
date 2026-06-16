@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8" />
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','828958808905391');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Angļu valodas apguves noslēpumi — bezmaksas vebinārs</title>
+<meta name="description" content="Bezmaksas vebinārs ikvienam, kurš vēlas apgūt angļu valodu 2–3 reizes ātrāk. Andris un Gunita Lankas — angļu valodas pasniedzēji ar 29 gadu pieredzi." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png" />
+
+<!-- Inter for the headings + body, matches the bold wordmark feel of Zoom-style typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ff: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* ===== TYPE SCALE — ONLY these three sizes are used across the whole site.
+       Hierarchy beyond size comes from font-weight, never extra sizes. ===== */
+    --fs-sm: clamp(13px, 1.1vw, 15px);   /* small: eyebrows, labels, hints, fine print, footer */
+    --fs-md: clamp(16px, 1.4vw, 19px);   /* medium: all body, list items, buttons, cards, form */
+    --fs-lg: clamp(33px, 8vw, 48px);     /* large: headlines, section titles, big numbers (bigger floor on phones) */
+
+    /* Color */
+    --bg:#ffffff;
+    --bg-cream:#f6f1e7;
+    --bg-cream-2:#efe8d8;
+    --text:#0a0a0a;
+    --text-soft:#3f3f46;
+    --muted:#71717a;
+    --line:#e4e4e7;
+    --line-2:#d4d4d8;
+
+    --maroon:#5a0a0a;
+    --maroon-text:#ef6a6a;
+    --red:#dc2626;
+    --red-600:#b91c1c;
+    --pink-card:#fce7e7;
+    --blue:#3b6cff;
+    --blue-600:#2952e6;
+    --zoom:#2D8CFF;
+
+    /* Effects */
+    --shadow-sm: 0 1px 2px rgba(15,23,42,.06);
+    --shadow-md: 0 10px 30px rgba(15,23,42,.08);
+    --shadow-lg: 0 20px 50px rgba(15,23,42,.12);
+    --shadow-btn: 0 10px 24px rgba(59,108,255,.32);
+
+    /* Radii */
+    --r-sm: 12px;
+    --r:    18px;
+    --r-lg: 24px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  html,body{ margin:0; padding:0 }
+  body{
+    font-family: var(--ff);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  img,svg{ max-width:100%; display:block; height:auto }
+  a{ color: var(--blue); text-decoration:none }
+  a:hover{ text-decoration: underline }
+  button{ font-family: inherit }
+
+  .wrap{
+    width:100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding-inline: clamp(20px, 4vw, 56px);
+  }
+
+  /* ============================ TOP BAR ============================ */
+  .topbar{
+    background: var(--red);
+    color: #fff;
+    text-align: center;
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: clamp(15px, 1.5vw, 20px);
+    letter-spacing: .005em;
+    line-height: 1.45;
+  }
+  .topbar p{ margin:0; max-width: 1100px; margin-inline:auto; overflow-wrap: anywhere }
+
+  /* ============================ HERO ============================ */
+  .hero{ padding-block: clamp(36px, 6vw, 80px); }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    gap: clamp(28px, 5vw, 80px);
+    align-items: start;
+  }
+  @media (max-width: 960px){
+    .hero-grid{ grid-template-columns: 1fr; }
+  }
+
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap: 14px 28px; align-items:center;
+    color: var(--text); font-weight: 600; font-size: var(--fs-md);
+    margin-bottom: 20px;
+  }
+  .hero-meta .item{ display:inline-flex; align-items:center; gap: 10px }
+  .hero-meta .ical{ width: 22px; height: 22px; flex:none }
+
+  /* The "zoom + E-pasts" inline mark */
+  .zoom-mark{
+    display:inline-flex; align-items:center; gap: 8px;
+    font-weight: 700;
+  }
+  .zoom-mark .zoom-logo{
+    height: clamp(20px, 2vw, 24px);
+    width: auto;
+    display: block;
+    /* Optical alignment with the text baseline */
+    transform: translateY(-1px);
+  }
+  .zoom-mark .plus{ color: var(--text); font-weight: 700; }
+
+  .kicker{
+    display:inline-block;
+    text-transform: uppercase; letter-spacing: .12em;
+    font-weight: 800; font-size: var(--fs-sm);
+    color: var(--red);
+    margin: 0 0 4px;
+  }
+
+  h1{
+    font-size: var(--fs-lg);
+    line-height: 1.04;
+    letter-spacing: -.025em;
+    margin: 8px 0 18px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .hero-q{
+    font-size: var(--fs-md);
+    color: var(--text);
+    font-weight: 600;
+    margin: 0 0 30px;
+    max-width: 68ch;
+  }
+
+  .hero-lead-in{
+    font-size: var(--fs-md);
+    font-weight: 700;
+    margin: 28px 0 22px;
+  }
+
+  /* Benefits list */
+  .benefits{ list-style:none; padding:0; margin: 0; display:grid; gap: 22px; max-width: 78ch }
+  .benefits li{
+    display:flex; gap: 16px; align-items:flex-start;
+    font-size: var(--fs-md);
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .check{
+    width: 30px; height: 30px; flex:none; margin-top: 1px;
+    color: var(--red);
+    fill: currentColor;
+  }
+
+  /* ---------- Right column ---------- */
+  .right-col{
+    display:flex; flex-direction:column; gap: 18px;
+    width:100%;
+    max-width: 480px;
+    margin-left:auto;
+    align-self: stretch;        /* fill the row height set by the taller left column */
+  }
+  @media (max-width: 960px){
+    .right-col{ margin: 0 auto; align-self: auto; }
+    .red-box{ margin: 0 !important; top: 0 !important; }
+  }
+
+  /* Photo + caption as one connected unit */
+  .speaker-card{ position: relative; }
+
+  .speaker-photo{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--r) var(--r) 0 0;  /* rounded top, square bottom — joins flush to caption */
+    overflow: hidden;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    box-shadow: var(--shadow-md);
+  }
+  .speaker-photo img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+  }
+
+  .pink-card{
+    position: relative;
+    z-index: 3;                 /* in front of the photo (photo is z-index 2) */
+    width: calc(100% + 44px);   /* wider than the photo — extends past both sides */
+    margin: 0 -22px 0;          /* attached directly to the picture bottom */
+    padding: 18px 22px;
+    background: var(--pink-card);
+    border-radius: var(--r);    /* fully rounded caption */
+    text-align: center;
+    color: var(--text);
+    line-height: 1.5;
+    box-shadow: var(--shadow-md);
+  }
+  .pink-card .label{ font-size: var(--fs-md) }
+  .pink-card .label b{ font-weight: 700 }
+  .pink-card .sub{
+    font-size: var(--fs-md);
+    color: var(--text-soft);
+    margin-top: 2px;
+  }
+
+  .closed-msg{ display:flex; flex-direction:column; gap: 6px; }
+  .closed-msg strong{ font-size: var(--fs-lg); font-weight: 800; line-height: 1.1; }
+  .closed-msg span{ font-size: var(--fs-md); font-weight: 600; }
+
+  .red-box{
+    background: transparent;
+    color: var(--red);
+    padding: 4px 0 0;
+    text-align: center;
+    margin-top: auto; margin-bottom: auto;  /* center in the space below the photo */
+    position: relative; top: -40px;          /* nudge higher */
+  }
+  .red-box small{
+    display:block; font-weight:800; letter-spacing:.08em;
+    font-size: var(--fs-md);
+    opacity: .98;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .red-box .date{
+    font-size: var(--fs-md);
+    font-weight: 800; line-height: 1.15;
+    margin-bottom: 4px;
+    letter-spacing: -.01em;
+  }
+  .red-box .time{
+    font-size: var(--fs-lg);
+    font-weight: 800;
+    letter-spacing: -.02em;
+  }
+
+  /* Countdown */
+  .countdown{
+    display:flex; flex-wrap:wrap; justify-content:center; gap: 8px;
+    margin-top: 14px;
+  }
+  .countdown .unit{
+    background: var(--red);
+    border-radius: 10px;
+    padding: 7px 11px;
+  }
+  .countdown .num{
+    font-size: var(--fs-md);
+    font-weight: 800; line-height: 1.1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown .lbl{
+    display:block; margin-top: 2px;
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase; letter-spacing: .01em;
+    opacity: .85;
+  }
+
+  /* "What you get" deliverables card */
+  .deliverables{
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 18px 22px;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+  .deliverables .d-title{
+    font-weight: 800; font-size: var(--fs-md);
+    margin: 0 0 10px;
+  }
+  .deliverables ul{ list-style:none; margin:0; padding:0; display:grid; gap: 10px }
+  .deliverables li{
+    display:flex; gap: 10px; align-items:flex-start;
+    font-size: var(--fs-md);
+    color: var(--text-soft); line-height: 1.45;
+  }
+  .deliverables .check{ width: 18px; height: 18px; margin-top: 2px; }
+
+  /* ============================ SOCIAL PROOF ============================ */
+  .proof{
+    background: var(--pink-card);
+    padding-block: clamp(40px, 5vw, 64px);
+  }
+  .stats{
+    display:grid; grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: clamp(36px, 8vw, 96px);
+    text-align:center; max-width: 880px; margin: 0 auto;
+  }
+  @media (max-width: 620px){ .stats{ grid-template-columns: 1fr; gap: 28px } }
+  .stat .big{
+    font-size: var(--fs-lg); font-weight: 900;
+    letter-spacing: -.02em; color: var(--red); line-height: 1;
+  }
+  .stat .cap{
+    margin-top: 8px; font-weight: 600;
+    font-size: var(--fs-md); color: var(--text);
+  }
+  .rating-summary{
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 6px 12px;
+    margin: clamp(28px, 4vw, 44px) auto 0;
+    font-size: var(--fs-md); color: var(--text);
+  }
+  .rating-summary .stars{ color: #f59e0b; letter-spacing: 2px; font-size: var(--fs-md); }
+  .rating-summary strong{ font-weight: 800; }
+
+  .testimonials{
+    display:grid; grid-template-columns: 0.8fr 1.25fr 0.8fr;  /* side reviews smaller, middle wider */
+    align-items: center;
+    gap: clamp(20px, 3vw, 32px);
+    max-width: 1080px; margin: clamp(40px, 5vw, 64px) auto 0;
+  }
+  @media (max-width: 880px){ .testimonials{ grid-template-columns: 1fr; max-width: 560px } }
+  .tcard{
+    background:#fff; border-radius: var(--r);
+    padding: clamp(22px, 3vw, 28px);
+    box-shadow: var(--shadow-sm); border: 1px solid var(--line);
+  }
+  .tcard .stars{ color: #f59e0b; font-size: var(--fs-md); letter-spacing: 2px; margin-bottom: 12px; text-align: center; }
+  .tcard p{ margin: 0 0 16px; color: var(--text); line-height: 1.6; font-size: var(--fs-md); font-style: italic; text-align: center; }
+  .tcard .who{ font-weight: 700; font-size: var(--fs-md); font-style: normal; text-align: center; }
+
+  /* ============================ CTA BUTTONS ============================ */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap: 10px;
+    padding: 22px 84px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: #fff; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .08em;
+    font-size: var(--fs-md);
+    border: 1px solid var(--blue-600);
+    box-shadow: var(--shadow-btn);
+    cursor: pointer;
+    min-height: 66px;
+    transition: transform .12s ease, background .15s ease, box-shadow .15s ease;
+    font-family: inherit;
+  }
+  .btn:hover{
+    background: var(--blue-600);
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(59,108,255,.4);
+  }
+  .btn:active{ transform: translateY(1px) }
+  .btn:focus-visible{ outline: 3px solid #93c5fd; outline-offset: 3px }
+  @media (max-width: 540px){
+    .btn{ width: 100%; padding: 16px 24px; }
+  }
+
+  .cta-row{ display:flex; justify-content:center; margin-top: clamp(28px, 4vw, 40px) }
+
+  .ps{
+    margin-top: 26px;
+    color: var(--text);
+    font-size: var(--fs-md);
+    line-height: 1.65;
+  }
+  @media (min-width: 980px){
+    .ps{ white-space: nowrap; }   /* one straight line on desktop */
+  }
+  .ps b{ font-weight: 800; font-style: normal }
+  .ps em{ font-style: italic }
+
+  /* ============================ FAQ ============================ */
+  .faq{
+    background: var(--pink-card);
+    padding-top: clamp(24px, 3vw, 40px);
+    padding-bottom: clamp(60px, 8vw, 110px);
+  }
+  .faq h2{
+    text-align: center;
+    font-size: var(--fs-lg);
+    margin: 0 0 clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    letter-spacing: -.015em;
+  }
+  .faq-list{
+    max-width: 760px; margin: 0 auto;
+    display: grid; gap: 14px;
+  }
+  .faq-item{
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .faq-item summary{
+    list-style: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 24px;
+    font-size: var(--fs-md); font-weight: 700; line-height: 1.35;
+    color: var(--text);
+  }
+  .faq-item summary::-webkit-details-marker{ display: none }
+  .faq-item summary:hover{ color: var(--red) }
+  .faq-item summary:focus-visible{ outline: 3px solid #93c5fd; outline-offset: -3px }
+  /* Chevron indicator that rotates when open */
+  .faq-chevron{
+    flex: none; width: 12px; height: 12px;
+    border-right: 2.5px solid var(--red); border-bottom: 2.5px solid var(--red);
+    transform: rotate(45deg); transition: transform .2s ease;
+    margin-top: -4px;
+  }
+  .faq-item[open] .faq-chevron{ transform: rotate(-135deg); margin-top: 2px; }
+  .faq-item p{
+    margin: 0;
+    padding: 0 24px 22px;
+    color: var(--text-soft);
+    font-size: var(--fs-md);
+    line-height: 1.7;
+  }
+
+  /* ============================ FOOTER ============================ */
+  footer{
+    background: #0a0a0a;
+    color: #d4d4d8;
+    text-align: center;
+    padding: clamp(28px, 4vw, 44px) 24px;
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+  }
+  footer p{ margin: 0; max-width: 920px; margin-inline:auto; overflow-wrap: anywhere }
+  footer a{
+    display:inline-block; margin:4px 5px;
+    padding:9px 18px; border-radius:999px;
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.28);
+    color:#fff; font-weight:600;
+    transition:background .15s ease,border-color .15s ease;
+  }
+  footer a:hover{ background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.55); text-decoration:none; }
+
+  /* ============================ MODAL ============================ */
+  .reg-modal{
+    display: none;
+    position: fixed; inset: 0; z-index: 100;
+    align-items: flex-start; justify-content: center;
+    padding: 20px;
+    overflow-y: auto;            /* only scrolls when the screen is too short to fit the card */
+    -webkit-overflow-scrolling: touch;
+    animation: fadeIn .18s ease;
+  }
+  /* Blurred dim layer on a FIXED element so it never streaks while the overlay scrolls */
+  .reg-modal::before{
+    content: "";
+    position: fixed; inset: 0; z-index: -1;
+    background: rgba(15,23,42,.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .reg-modal.open{ display: flex }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  .reg-card{
+    background: #fff; border-radius: var(--r);
+    width: 100%; max-width: min(900px, 94vw);
+    margin: auto;                /* centers when it fits; pins to top & scrolls when it doesn't */
+    padding: clamp(24px, 3.2vw, 44px);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: pop .22s cubic-bezier(.2,.8,.3,1);
+  }
+  @keyframes pop {
+    from{ transform: translateY(8px) scale(.985); opacity: 0 }
+    to  { transform: none; opacity: 1 }
+  }
+  .reg-card h3{ margin: 0 0 8px; font-size: var(--fs-lg); font-weight: 800; letter-spacing: -.01em; text-align: center }
+  .reg-card .sub{ color: var(--muted); font-size: var(--fs-md); margin-bottom: 20px; white-space: nowrap; text-align: center }
+  .reg-card .close-x{
+    position: absolute; top: 16px; right: 16px; z-index: 5;
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--bg-cream); color: var(--text-soft);
+    border: 1px solid var(--line);
+    cursor: pointer; padding: 0;
+    display:grid; place-items:center;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+  .reg-card .close-x svg{ width: 18px; height: 18px; display:block }
+  .reg-card .close-x:hover{ background: var(--bg-cream-2); color: var(--text) }
+  .reg-card .close-x:active{ transform: scale(.94) }
+  .reg-card .close-x:focus-visible{ outline: 3px solid #93c5fd; outline-offset: 2px }
+
+  /* ----- Rich success view: short video + Calendly side by side ----- */
+  .reg-card.success-wide{ max-width: min(980px, 96vw); }
+  .ty-grid{ display:grid; grid-template-columns: 300px minmax(0,1fr); gap: clamp(40px,6vw,84px); align-items:start; margin-top:18px; }
+  .ty-video{ width:300px; max-width:100%; }
+  .ty-video-wrap{ position:relative; width:100%; aspect-ratio:9/16; border-radius:16px; overflow:hidden; background:#000; box-shadow: var(--shadow-md); }
+  .ty-video-wrap iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .ty-cal{ min-width:0; width:100%; }
+  .ty-cal #calMount{ border-radius:16px; overflow:hidden; }
+  .close-link{
+    display:block; width:fit-content; margin:24px auto 0;
+    padding:11px 28px; border-radius:999px;
+    background:#fff; border:1px solid var(--line-2); color:var(--text-soft);
+    font-size:var(--fs-md); font-weight:600; cursor:pointer; text-decoration:none;
+    transition:background .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .close-link:hover{ background:var(--bg-cream); border-color:var(--line); color:var(--text); }
+  @media (max-width: 760px){
+    .ty-grid{ grid-template-columns: 1fr; justify-items:center; }
+    .ty-video{ width: 260px; }
+    .ty-cal{ width:100%; }
+  }
+
+  form{ display:grid; gap: 16px }
+  .field{ display:grid; gap: 7px }
+  label{ font-size: var(--fs-md); font-weight: 600; color: var(--text-soft); white-space: nowrap }
+  label .hint{ color: var(--muted); font-weight: 400; font-size: var(--fs-sm) }
+
+  .input-wrap{ position: relative }
+  .input-wrap .ifield{
+    width:100%;
+    background:#fff;
+    border:1px solid var(--line-2);
+    color: var(--text);
+    padding: 18px 18px 18px 52px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: var(--fs-md);
+    outline: none;
+    min-height: 62px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .input-wrap .ifield::placeholder{ color: var(--muted); opacity: 1 }
+  .input-wrap .ifield:focus{
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(59,108,255,.18);
+  }
+  .input-wrap .ico{
+    position: absolute;
+    left: 18px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  /* Fixed "+371" prefix — visible guide so people enter Latvian numbers.
+     It is NOT part of the field value, so the sheet stores only the typed digits. */
+  .input-wrap .prefix{
+    position: absolute;
+    left: 18px; top: 50%; transform: translateY(-50%);
+    font-weight: 600; color: var(--text-soft); font-size: var(--fs-md);
+    pointer-events: none;
+  }
+  .input-wrap .prefix + .ifield--prefixed{ padding-left: 72px; }
+
+  .consent{
+    display:flex; gap: 12px; align-items:flex-start;
+    font-size: var(--fs-md); line-height: 1.5; color: var(--text-soft);
+    margin-top: 2px; white-space: normal;
+  }
+  .consent input{
+    -webkit-appearance: none; appearance: none;
+    width: 24px; height: 24px; flex:none; margin-top: 1px;
+    border: 2px solid var(--line-2); border-radius: 6px;
+    background: #fff; cursor: pointer; position: relative;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .consent input:checked{ background: var(--blue); border-color: var(--blue); }
+  .consent input:checked::after{
+    content: ""; position: absolute; left: 7px; top: 3px;
+    width: 6px; height: 11px;
+    border: solid #fff; border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .consent input:focus-visible{ outline: none; box-shadow: 0 0 0 3px rgba(59,108,255,.25); }
+  .consent a{ text-decoration: underline }
+
+  .field-error{
+    display: none;
+    color: var(--red); font-size: var(--fs-sm); font-weight: 600;
+    margin-top: 2px;
+  }
+  .field-error.show{ display: block }
+  .input-wrap .ifield.invalid{
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(220,38,38,.16);
+  }
+  .consent.invalid{ color: var(--red) }
+  .consent.invalid input{
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(220,38,38,.16);
+  }
+
+  /* Modal state views: form / loading / success */
+  .reg-view[hidden]{ display: none; }
+  .reg-state{
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; gap: 14px;
+    min-height: 320px;
+    padding: 20px 0;
+  }
+  .reg-state h3{ margin: 0; font-size: var(--fs-lg); font-weight: 800; }
+  .reg-state .state-text{ margin: 0; max-width: 46ch; color: var(--text-soft); font-size: var(--fs-md); line-height: 1.6; }
+
+  /* Spinner */
+  .spinner{
+    width: 56px; height: 56px;
+    border: 5px solid rgba(59,108,255,.2);
+    border-top-color: var(--blue);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Success check */
+  .success-check{
+    width: 76px; height: 76px; border-radius: 50%;
+    background: #ecfdf5; color: #16a34a;
+    display: grid; place-items: center;
+    animation: pop .3s cubic-bezier(.2,.8,.3,1);
+  }
+  .success-check svg{ width: 40px; height: 40px; display: block; }
+
+  /* ============================ RESPONSIVE (phones / small tablets) ============================ */
+  @media (max-width: 700px){
+    .hero{ padding-block: 28px; }
+    /* Caption no longer overhangs the photo sides on narrow screens */
+    .pink-card{ width: 100%; margin: 0; }
+    .red-box{ padding: 24px 18px; }
+    .countdown .unit{ padding: 9px 12px; }
+    /* Center the intro text on phones */
+    .kicker{ display: block; text-align: center; }
+    h1, .hero-lead-in, .hero-q{ text-align: center; }
+    .hero-q{ margin-inline: auto; }
+    /* Even spacing in the checklist: tighter wrapped lines so 1- and 2-line items read evenly */
+    .benefits{ gap: 26px; }
+    .benefits li{ line-height: 1.35; }
+    /* Rating summary: stack the stars over the centered text */
+    .rating-summary{ flex-direction: column; gap: 6px; text-align: center; }
+    .rating-summary span{ max-width: 30ch; }
+    /* Footer buttons side by side instead of stacked */
+    footer > p:first-child{ display: flex; flex-wrap: nowrap; justify-content: center; gap: 8px; }
+    footer > p:first-child a{ margin: 0; white-space: nowrap; padding: 8px 12px; font-size: 12.5px; }
+  }
+  @media (max-width: 460px){
+    /* A touch tighter on the smallest phones */
+    .hero-meta{ gap: 10px 18px; }
+    .red-box{ padding: 20px 16px; }
+    .countdown{ gap: 8px; }
+    .reg-card{ padding: 22px 16px; }
+    .reg-card .close-x{ top: 10px; right: 10px; width: 38px; height: 38px; }
+    .reg-card .sub{ white-space: normal; }   /* allow the modal subtitle to wrap rather than overflow */
+    label{ white-space: normal; }            /* let long field labels wrap instead of overflowing */
+    .btn{ letter-spacing: .05em; }
+  }
+  /* ===== Desktop-only fine-tuning ===== */
+  @media (min-width: 961px){
+    .zoom-mark{ margin-left: 120px; }   /* sit further to the right of the date */
+    .right-col{ margin-top: 32px; }     /* nudge the photo / date column down a little */
+  }
+
+  /* ============================ A11Y / MOTION ============================ */
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important }
+    html{ scroll-behavior:auto }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== TOP ANNOUNCEMENT BAR ============== -->
+<div class="topbar">
+  <p>Bezmaksas vebinārs ikvienam, kurš vēlas apgūt angļu valodu 2–3x ātrāk</p>
+</div>
+
+<main>
+  <!-- ============== HERO ============== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <!-- LEFT COLUMN -->
+        <div>
+          <div class="hero-meta">
+            <span class="item">
+              <!-- Calendar (filled) -->
+              <svg class="ical" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1Zm13 8H4v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9ZM7.5 12h2v2h-2v-2Zm4 0h2v2h-2v-2Zm4 0h2v2h-2v-2Zm-8 4h2v2h-2v-2Zm4 0h2v2h-2v-2Zm4 0h2v2h-2v-2Z"/>
+              </svg>
+              <span class="meta-date">Trešdien, 17. jūnijā</span>
+            </span>
+            <span class="item zoom-mark">
+              <img class="zoom-logo" src="zoom.jpg" alt="Zoom" decoding="async" />
+              <span class="plus">+ E-pasts</span>
+            </span>
+          </div>
+
+          <p class="kicker">Bezmaksas tiešsaistes vebinārs</p>
+          <h1>Apgūsti angļu valodu <br>2–3x ātrāk</h1>
+
+          <p class="hero-q">Vai Tu jau sen vēlies apgūt angļu valodu, bet&nbsp;nezini&nbsp;ar&nbsp;ko&nbsp;sākt?</p>
+
+          <p class="hero-lead-in">Vebinārā Tu iemācīsies:</p>
+
+          <ul class="benefits">
+            <li>
+              <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.55 17.5 4 11.95l1.4-1.4 4.15 4.15 9.05-9.05L20 6.95 9.55 17.5Z"/></svg>
+              <span>Cik bieži ir jāmācās un kādi ir rezultāti</span>
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.55 17.5 4 11.95l1.4-1.4 4.15 4.15 9.05-9.05L20 6.95 9.55 17.5Z"/></svg>
+              <span>Kas ir bezmērķīga mācīšanās un kā no tās izvairīties</span>
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.55 17.5 4 11.95l1.4-1.4 4.15 4.15 9.05-9.05L20 6.95 9.55 17.5Z"/></svg>
+              <span>Kā ietaupīt laiku, zinot, kas "bremzē" valodas apguvi</span>
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.55 17.5 4 11.95l1.4-1.4 4.15 4.15 9.05-9.05L20 6.95 9.55 17.5Z"/></svg>
+              <span>Kā vairs "nemuļļāties" uz vietas</span>
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.55 17.5 4 11.95l1.4-1.4 4.15 4.15 9.05-9.05L20 6.95 9.55 17.5Z"/></svg>
+              <span>Kā pēc pauzes uzreiz neatkrist atpakaļ</span>
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.55 17.5 4 11.95l1.4-1.4 4.15 4.15 9.05-9.05L20 6.95 9.55 17.5Z"/></svg>
+              <span>Cik ātri var apgūt angļu valodu "no nulles"</span>
+            </li>
+          </ul>
+
+          <!-- CTA (left column, like the reference) -->
+          <div class="cta-row">
+            <button type="button" class="btn" data-open-reg>Reģistrēties Vebināram</button>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <aside class="right-col">
+          <div class="speaker-card">
+            <div class="speaker-photo">
+              <img src="pasniedzeji2.jpg"
+                   alt="Pasniedzēji Andris un Gunita Lankas"
+                   loading="eager"
+                   decoding="async" />
+            </div>
+            <div class="pink-card">
+              <div class="label">Pasniedzēji: <b>Andris un Gunita Lankas</b></div>
+              <div class="sub">Angļu valodas pasniedzēji ar&nbsp;30&nbsp;gadu&nbsp;pieredzi</div>
+            </div>
+          </div>
+          <div class="red-box">
+            <div class="date">Trešdien, 17. jūnijā</div>
+            <div class="time">19:00 <span style="font-size:var(--fs-md); font-weight:700; opacity:.9">(Latvijas laiks)</span></div>
+            <div class="countdown" id="countdown" aria-label="Atpakaļskaitīšana līdz vebināram">
+              <div class="unit"><div class="num" data-cd="days">00</div><span class="lbl">dienas</span></div>
+              <div class="unit"><div class="num" data-cd="hours">00</div><span class="lbl">stundas</span></div>
+              <div class="unit"><div class="num" data-cd="mins">00</div><span class="lbl">min.</span></div>
+              <div class="unit"><div class="num" data-cd="secs">00</div><span class="lbl">sek.</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <p class="ps">
+        <b>P.S.</b> <em>Ja Tu jau mācies angļu valodu, šī sesija Tev parādīs <span style="color:var(--red); font-style:normal; font-weight:700">kā daudz ātrāk un precīzāk sasniegt savu mērķi!</span></em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============== SOCIAL PROOF ============== -->
+  <section class="proof">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat">
+          <div class="big">30</div>
+          <div class="cap">gadu pieredze valodu mācīšanā</div>
+        </div>
+        <div class="stat">
+          <div class="big">2000+</div>
+          <div class="cap">apmācīti studenti</div>
+        </div>
+      </div>
+
+      <div class="rating-summary">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span><strong>4,9/5</strong> vidējais vērtējums no&nbsp;300+&nbsp;atsauksmēm</span>
+      </div>
+
+      <div class="testimonials">
+        <div class="tcard">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>Superīgi 👌<br>Šo neiemācīja skolā un arī citos&nbsp;kursos&nbsp;nē.</p>
+          <div class="who">— Inese G.</div>
+        </div>
+        <div class="tcard">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>Jums ar šo programmu un Jūsu unikālo mācītprasmi ir izdevies mani, skeptiķi, izaicināt uz angļu valodas PIEŅEMŠANU!!! Brīnišķīgi! Paldies!</p>
+          <div class="who">— Laimdota S.</div>
+        </div>
+        <div class="tcard">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>Paldies!<br>Jūs mācāt tik skaidri un&nbsp;vienkārši!<br>Jā, tā ir māksla!</p>
+          <div class="who">— Sandra S.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FAQ ============== -->
+  <section class="faq">
+    <div class="wrap">
+      <h2>Biežāk uzdotie jautājumi</h2>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Kā es varu piekļūt vebināram?<span class="faq-chevron" aria-hidden="true"></span></summary>
+          <p>Pēc reģistrācijas Tu saņemsi e-pastu ar īsu jautājumu par Tavu pašreizējo angļu valodas līmeni. Pašu vebināra piekļuves saiti nosūtīsim vebināra dienā kopā ar atgādinājumu.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vai saņemšu atgādinājumu pirms vebināra?<span class="faq-chevron" aria-hidden="true"></span></summary>
+          <p>Jā, pirms vebināra mēs nosūtīsim atgādinājuma ziņojumu, lai nepalaistu to garām.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vai būs pieejams ieraksts?<span class="faq-chevron" aria-hidden="true"></span></summary>
+          <p>Ja nevarēsi piedalīties tiešraidē, neuztraucies — pēc vebināra dalībniekiem tiks nosūtīts arī ieraksts.</p>
+        </details>
+      </div>
+
+      <div class="cta-row">
+        <button type="button" class="btn" data-open-reg>Reģistrēties Vebināram</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>
+    <a href="/privatuma-politika">Privātuma politika</a>
+        <a href="/lietosanas-noteikumi">Lietošanas noteikumi</a>
+  </p>
+  <p style="margin-top:14px;font-weight:600;color:#e4e4e7">© 2026 SIA Mācies valodas · LV42103038202 · Ludviķa iela 18, Liepāja</p>
+  <p style="margin-top:4px;opacity:.65">SIA «Valodu vēstniecība» meitas uzņēmums · zīmola identitāti izmanto biedrība «Lingvitus»</p>
+</footer>
+
+<!-- ============== REGISTRATION MODAL ============== -->
+<div class="reg-modal" id="regModal" aria-hidden="true">
+  <div class="reg-card" role="dialog" aria-modal="true" aria-labelledby="regTitle">
+    <button type="button" class="close-x" data-close-reg aria-label="Aizvērt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6 18 18 M18 6 6 18"/>
+      </svg>
+    </button>
+    <!-- FORM VIEW -->
+    <div class="reg-view" id="formView">
+    <h3 id="regTitle">Reģistrējies vebināram</h3>
+    <p class="sub">Aizpildi formu — saņemsi ZOOM saiti uz e-pastu.</p>
+
+    <form id="reg" novalidate>
+      <div class="field">
+        <label for="name">Vārds<span style="color:#dc2626">*</span></label>
+        <div class="input-wrap">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="9.5"/>
+            <circle cx="12" cy="10" r="3"/>
+            <path d="M5.5 19c1.5-3 4-4.5 6.5-4.5S17 16 18.5 19"/>
+          </svg>
+          <input class="ifield" id="name" name="name" type="text" required autocomplete="name" placeholder="Tavs vārds" />
+        </div>
+        <div class="field-error" id="err-name">Lūdzu, ievadi savu vārdu.</div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-pasts<span style="color:#dc2626">*</span></label>
+        <div class="input-wrap">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+          <input class="ifield" id="email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="E-pasta adrese" />
+        </div>
+        <div class="field-error" id="err-email">Lūdzu, ievadi derīgu e-pasta adresi.</div>
+      </div>
+
+      <div class="field">
+        <label for="phone">Tel. numurs<span style="color:#dc2626">*</span> <span class="hint">(ar Tevi komunicēsim tikai mācību jautājumos.)</span></label>
+        <div class="input-wrap">
+          <span class="prefix" aria-hidden="true">+371</span>
+          <input class="ifield ifield--prefixed" id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="numeric" maxlength="8" placeholder="20 123 456" />
+        </div>
+        <div class="field-error" id="err-phone">Tālruņa numuram jābūt 8 cipariem.</div>
+      </div>
+
+      <label class="consent">
+        <input type="checkbox" id="consent" name="consent" required />
+        <span>Piekrītu, ka mani dati tiek izmantoti saziņai par vebināru un mācībām, un personas datu apstrādei saskaņā ar <a href="/privatuma-politika">privātuma politiku</a>.</span>
+      </label>
+
+      <button type="submit" class="btn" style="margin-top: 6px">Apstiprināt Reģistrāciju</button>
+    </form>
+    </div>
+
+    <!-- LOADING VIEW -->
+    <div class="reg-view reg-state" id="loadingView" hidden>
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="state-text">Nosūta reģistrāciju…</p>
+    </div>
+
+    <!-- SUCCESS VIEW -->
+    <div class="reg-view reg-state" id="successView" hidden>
+      <div class="success-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3>Noskaties šo video!</h3>
+      <div class="ty-grid">
+        <div class="ty-video">
+          <div class="ty-video-wrap">
+            <iframe src="https://www.youtube.com/embed/fh8Blxf0iM0?rel=0&playsinline=1"
+              title="Mācies valodas" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="ty-cal">
+          <div id="calMount" style="min-width:300px;height:640px;"></div>
+        </div>
+      </div>
+      <button type="button" class="close-link" data-close-reg>Aizvērt</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal
+  const modal = document.getElementById('regModal');
+  let signupsClosed = false;          // becomes true once the countdown reaches zero
+  let currentView = 'form';           // only the form view can be dismissed by backdrop/Escape
+  const open = () => {
+    if (signupsClosed) return;        // no opening the form after the webinar starts
+    if (typeof showView === 'function') showView('form');  // always start on the form
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => modal.querySelector('input')?.focus(), 60);
+  };
+  const close = () => {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('[data-open-reg]').forEach(b => b.addEventListener('click', open));
+  document.querySelectorAll('[data-close-reg]').forEach(b => b.addEventListener('click', close));
+  modal.addEventListener('click', (e) => { if (e.target === modal && currentView === 'form') close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open') && currentView === 'form') close(); });
+
+  // Modal views: form / loading / success
+  const formView = document.getElementById('formView');
+  const loadingView = document.getElementById('loadingView');
+  const successView = document.getElementById('successView');
+  const closeX = document.querySelector('#regModal .close-x');
+  const regCard = document.querySelector('#regModal .reg-card');
+  const showView = (name) => {
+    currentView = name;
+    formView.hidden = (name !== 'form');
+    loadingView.hidden = (name !== 'loading');
+    successView.hidden = (name !== 'success');
+    if (closeX) closeX.style.display = (name === 'form') ? '' : 'none';   // hide × on loading/success
+    if (regCard) regCard.classList.toggle('success-wide', name === 'success');  // widen for video + Calendly
+  };
+
+  // Mount the Calendly inline widget (prefilled) inside the success view.
+  function mountCalendly(name, email){
+    const el = document.getElementById('calMount');
+    if (!el || el.dataset.mounted) return;
+    const url = 'https://calendly.com/business-eng/bezmaksas-15-min-konsultacija-clone?hide_event_type_details=1&hide_gdpr_banner=1';
+    const init = () => {
+      if (!window.Calendly) return false;
+      el.innerHTML = '';
+      window.Calendly.initInlineWidget({ url, parentElement: el, prefill: { name: name || '', email: email || '' } });
+      el.dataset.mounted = '1';
+      return true;
+    };
+    if (init()) return;
+    if (!document.getElementById('calendly-js')){
+      const s = document.createElement('script');
+      s.id = 'calendly-js';
+      s.src = 'https://assets.calendly.com/assets/external/widget.js';
+      s.async = true;
+      document.body.appendChild(s);
+    }
+    let tries = 0;
+    const t = setInterval(() => { if (init() || ++tries > 60) clearInterval(t); }, 150);
+  }
+
+  // Meta: fire a conversion when a Calendly call is actually booked.
+  window.addEventListener('message', (e) => {
+    if (e && e.data && e.data.event === 'calendly.event_scheduled' && window.fbq) fbq('track', 'Schedule');
+  });
+
+  // Form — sends the lead to the Google Sheet connector, then shows the success view.
+  const form = document.getElementById('reg');
+  const nameEl = document.getElementById('name');
+  const emailEl = document.getElementById('email');
+  const consentEl = document.getElementById('consent');
+  const phoneEl = document.getElementById('phone');
+  const errName = document.getElementById('err-name');
+  const errEmail = document.getElementById('err-email');
+  const errPhone = document.getElementById('err-phone');
+  const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+
+  // Phone: digits only, capped at 8. Warning appears only after submit (then clears live).
+  phoneEl.addEventListener('input', () => {
+    phoneEl.value = phoneEl.value.replace(/\D/g, '').slice(0, 8);
+    if (submitted) validate();
+  });
+
+  function validate() {
+    let firstBad = null;
+    // Name
+    if (!nameEl.value.trim()) {
+      nameEl.classList.add('invalid'); errName.classList.add('show');
+      firstBad = firstBad || nameEl;
+    } else { nameEl.classList.remove('invalid'); errName.classList.remove('show'); }
+    // Email
+    const ev = emailEl.value.trim();
+    if (!ev) {
+      errEmail.textContent = 'Lūdzu, ievadi savu e-pasta adresi.';
+      emailEl.classList.add('invalid'); errEmail.classList.add('show');
+      firstBad = firstBad || emailEl;
+    } else if (!emailOk(ev)) {
+      errEmail.textContent = 'Lūdzu, ievadi derīgu e-pasta adresi.';
+      emailEl.classList.add('invalid'); errEmail.classList.add('show');
+      firstBad = firstBad || emailEl;
+    } else { emailEl.classList.remove('invalid'); errEmail.classList.remove('show'); }
+    // Phone (required, must be exactly 8 digits)
+    const pv = phoneEl.value.replace(/\D/g, '');
+    if (!pv) {
+      errPhone.textContent = 'Lūdzu, ievadi savu tālruņa numuru.';
+      phoneEl.classList.add('invalid'); errPhone.classList.add('show');
+      firstBad = firstBad || phoneEl;
+    } else if (pv.length !== 8) {
+      errPhone.textContent = 'Tālruņa numuram jābūt 8 cipariem.';
+      phoneEl.classList.add('invalid'); errPhone.classList.add('show');
+      firstBad = firstBad || phoneEl;
+    } else { phoneEl.classList.remove('invalid'); errPhone.classList.remove('show'); }
+    // Consent
+    if (!consentEl.checked) {
+      consentEl.closest('.consent').classList.add('invalid');
+      firstBad = firstBad || consentEl;
+    } else { consentEl.closest('.consent').classList.remove('invalid'); }
+    return firstBad;
+  }
+  // Errors only appear after the first submit attempt; after that, clear live as the user fixes them.
+  let submitted = false;
+  [nameEl, emailEl].forEach(el => el.addEventListener('input', () => { if (submitted) validate(); }));
+  consentEl.addEventListener('change', () => { if (submitted) validate(); });
+
+  // ⬇️ IELĪMĒ ŠEIT savu Google Apps Script "Web app" URL (beidzas ar /exec).
+  const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzKNNqL6SfggXKnH6oafnOC1OHdxYlQ5pDgdGezc-GzibBynm2kepgbHxL0T9cfifPp/exec';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (signupsClosed) return;
+    submitted = true;
+    const firstBad = validate();
+    if (firstBad) { firstBad.focus(); return; }
+
+    const payload = new URLSearchParams({
+      name: nameEl.value.trim(),
+      email: emailEl.value.trim(),
+      phone: phoneEl.value.trim(),
+      consent: consentEl.checked ? 'yes' : '',
+    });
+
+    showView('loading');   // spinner while we send
+    try {
+      // Google Apps Script doesn't send CORS headers, so we fire the request in
+      // "no-cors" mode (the row is still written; we just can't read the reply).
+      await fetch(SHEET_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload });
+      showView('success');   // popup now shows the video + Calendly booking
+      if (window.fbq) { fbq('track', 'CompleteRegistration'); fbq('track', 'Lead'); }   // Meta conversion events
+      mountCalendly(nameEl.value.trim(), emailEl.value.trim());   // prefilled Calendly
+    } catch (err) {
+      showView('form');
+      alert('Diemžēl neizdevās nosūtīt. Lūdzu, mēģini vēlreiz vai raksti mums uz macibas@maciesvalodas.lv.');
+    }
+  });
+
+  // Once the webinar starts, lock registration and show the "next one soon" message.
+  function closeSignups(){
+    signupsClosed = true;
+    if (modal && modal.classList.contains('open')) close();
+    // Replace the date/countdown card with a closed-registration message
+    const box = document.querySelector('.red-box');
+    if (box) {
+      box.innerHTML = '<div class="closed-msg">'
+        + '<strong>Reģistrācija ir slēgta</strong>'
+        + '<span>Nākamais vebinārs jau drīzumā!</span>'
+        + '</div>';
+    }
+    // Disable every "Reģistrēties" button
+    document.querySelectorAll('[data-open-reg]').forEach(b => {
+      b.disabled = true;
+      b.textContent = 'Reģistrācija slēgta';
+    });
+  }
+
+  // Webinar date/time + countdown.
+  // The date, time and texts are read LIVE from the Google Sheet ("Settings" tab) via JSONP,
+  // so anyone with sheet access can change the date. If the Sheet can't be reached, the
+  // baked-in fallback below is used so the page always works.
+  (function(){
+    const WEBINAR = {
+      target: new Date('2026-06-17T19:00:00+03:00'),  // fallback target
+      dateText: 'Trešdien, 17. jūnijā',                // fallback date line
+      timeText: '19:00 (Latvijas laiks)'               // fallback time line
+    };
+
+    const dateEl = document.querySelector('.red-box .date');
+    const timeEl = document.querySelector('.red-box .time');
+    const metaDateEl = document.querySelector('.meta-date');   // top-left date next to the calendar icon
+    const els = {
+      days: document.querySelector('[data-cd="days"]'),
+      hours: document.querySelector('[data-cd="hours"]'),
+      mins: document.querySelector('[data-cd="mins"]'),
+      secs: document.querySelector('[data-cd="secs"]'),
+    };
+    const pad = (n) => String(n).padStart(2, '0');
+    let timer = null;
+
+    // "YYYY-MM-DD HH:MM" entered as Latvia local time → correct Date (DST-aware via Europe/Riga).
+    function rigaToDate(str){
+      const m = String(str).trim().match(/(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
+      if (!m) return null;
+      const asUTC = Date.UTC(+m[1], +m[2]-1, +m[3], +m[4], +m[5], 0);
+      try{
+        const dtf = new Intl.DateTimeFormat('en-US', { timeZone:'Europe/Riga', hour12:false,
+          year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit' });
+        const p = {}; dtf.formatToParts(new Date(asUTC)).forEach(x => p[x.type] = x.value);
+        const asTZ = Date.UTC(+p.year, +p.month-1, +p.day, +p.hour, +p.minute, +p.second);
+        return new Date(asUTC - (asTZ - asUTC));
+      }catch(e){ return new Date(asUTC); }
+    }
+
+    function applyText(){
+      if (dateEl && WEBINAR.dateText) dateEl.textContent = WEBINAR.dateText;
+      if (metaDateEl && WEBINAR.dateText) metaDateEl.textContent = WEBINAR.dateText;
+      if (timeEl && WEBINAR.timeText){
+        timeEl.innerHTML = WEBINAR.timeText.replace(/\(([^)]*)\)/,
+          '<span style="font-size:var(--fs-md); font-weight:700; opacity:.9">($1)</span>');
+      }
+    }
+
+    function tick(){
+      let diff = WEBINAR.target.getTime() - Date.now();
+      if (diff <= 0){ if (timer) clearInterval(timer); closeSignups(); return; }
+      const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+      const h = Math.floor(diff / 3600000);  diff -= h * 3600000;
+      const m = Math.floor(diff / 60000);    diff -= m * 60000;
+      const s = Math.floor(diff / 1000);
+      if (els.days){
+        els.days.textContent = pad(d);  els.hours.textContent = pad(h);
+        els.mins.textContent = pad(m);  els.secs.textContent = pad(s);
+      }
+    }
+
+    function start(){
+      applyText();
+      if (!els.days) return;
+      if (timer){ clearInterval(timer); timer = null; }
+      if (Date.now() >= WEBINAR.target.getTime()){ closeSignups(); return; }
+      tick();
+      timer = setInterval(tick, 1000);
+    }
+
+    // Live config from the Sheet (JSONP callback — avoids CORS). Overrides the values live.
+    window.__webinarCfg = function(cfg){
+      try{
+        if (cfg){
+          const t = cfg.iso ? new Date(cfg.iso) : (cfg.datetime ? rigaToDate(cfg.datetime) : null);
+          if (t && !isNaN(t.getTime())) WEBINAR.target = t;
+          if (cfg.dateText) WEBINAR.dateText = cfg.dateText;
+          if (cfg.timeText) WEBINAR.timeText = cfg.timeText;
+        }
+      }catch(e){}
+      start();
+    };
+
+    // Show the countdown instantly with current values, then fetch the live config and override.
+    start();
+    const cfgScript = document.createElement('script');
+    cfgScript.src = SHEET_ENDPOINT + '?action=config&callback=__webinarCfg&cb=' + Date.now();
+    cfgScript.async = true;
+    document.head.appendChild(cfgScript);
+  })();
+</script>
+</body>
+</html>
