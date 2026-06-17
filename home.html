@@ -9,7 +9,7 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','828958808905391');fbq('track','PageView');
+fbq('init','828958808905391');fbq('track','PageView',{source:'v3'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></noscript>
@@ -1139,7 +1139,7 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
       // "no-cors" mode (the row is still written; we just can't read the reply).
       await fetch(SHEET_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload });
       showView('success');   // popup now shows the video + Calendly booking
-      if (window.fbq) { fbq('track', 'CompleteRegistration'); fbq('track', 'Lead'); }   // Meta conversion events
+      if (window.fbq) { fbq('track', 'CompleteRegistration', {source:'v3'}); fbq('track', 'Lead', {source:'v3'}); }   // Meta conversion events
       mountCalendly(nameEl.value.trim(), emailEl.value.trim());   // prefilled Calendly
     } catch (err) {
       showView('form');
