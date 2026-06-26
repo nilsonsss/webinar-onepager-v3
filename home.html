@@ -1076,9 +1076,8 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
     const btn = document.getElementById('wlSubmit');
     const done = document.getElementById('wlDone');
     chk.addEventListener('change', () => { btn.disabled = !chk.checked; });
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', () => {
       if (!chk.checked) return;
-      btn.disabled = true; btn.textContent = 'Nosūta…';
       const wl = new URLSearchParams({
         action: 'waitlist',
         name: nameEl.value.trim(),
@@ -1086,7 +1085,9 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
         phone: phoneEl.value.trim(),
         source: 'v3',
       });
-      try { await fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors', body: wl }); } catch(e){}
+      // Fire-and-forget: the no-cors reply is unreadable anyway, so don't make the
+      // user wait on it — show the confirmation instantly to avoid a "stuck" button.
+      try { fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors', body: wl }); } catch(e){}
       if (window.fbq) fbq('track', 'Lead', {source:'v3', type:'waitlist'});
       chk.closest('.wl-check').hidden = true;
       btn.hidden = true;
