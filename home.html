@@ -548,6 +548,29 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
   .ty-video-wrap iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   .ty-cal{ min-width:0; width:100%; }
   .ty-cal #calMount{ border-radius:16px; overflow:hidden; }
+  /* ----- Waitlist block (shown instead of Calendly when slots are closed) ----- */
+  .waitlist{
+    border:1px solid var(--line-2); border-radius:16px; background:var(--bg-cream);
+    padding: clamp(24px,4vw,40px); text-align:center; box-shadow: var(--shadow-md);
+  }
+  .waitlist .wl-title{ margin:0 0 10px; font-size:var(--fs-lg); font-weight:800; color:var(--red); line-height:1.2; }
+  .waitlist .wl-text{ margin:0 0 22px; font-size:var(--fs-md); color:var(--text-soft); line-height:1.5; }
+  .waitlist .wl-check{
+    display:flex; gap:12px; align-items:flex-start; text-align:left;
+    font-size:var(--fs-md); color:var(--text); line-height:1.45; cursor:pointer; margin-bottom:22px;
+  }
+  .waitlist .wl-check input{ width:22px; height:22px; flex:0 0 auto; margin-top:1px; accent-color:var(--red); cursor:pointer; }
+  .waitlist .wl-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:100%; padding:16px 28px; border-radius:999px;
+    background:var(--red); color:#fff; font-weight:800; font-size:var(--fs-md);
+    text-transform:uppercase; letter-spacing:.05em;
+    border:1px solid var(--red-600); cursor:pointer; font-family:inherit;
+    transition: transform .12s ease, background .15s ease, opacity .15s ease;
+  }
+  .waitlist .wl-btn:hover:not(:disabled){ background:var(--red-600); transform:translateY(-1px); }
+  .waitlist .wl-btn:disabled{ opacity:.5; cursor:not-allowed; }
+  .waitlist .wl-done{ margin:6px 0 0; font-size:var(--fs-md); font-weight:700; color:#15803d; line-height:1.5; }
   .close-link{
     display:block; width:fit-content; margin:24px auto 0;
     padding:11px 28px; border-radius:999px;
@@ -983,6 +1006,13 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
         </div>
         <div class="ty-cal">
           <div id="calMount" style="min-width:300px;height:640px;"></div>
+          <div id="waitlistBox" class="waitlist" hidden>
+            <h4 class="wl-title">Šobrīd visi laiki ir aizņemti</h4>
+            <p class="wl-text">Atzīmējiet lauciņu zemāk, un mēs ar Jums sazināsimies, tiklīdz atbrīvosies kāds brīvs laiks.</p>
+            <label class="wl-check"><input type="checkbox" id="wlConsent"> Jā, vēlos, lai man paziņo, kad atbrīvojas laiki.</label>
+            <button type="button" class="wl-btn" id="wlSubmit" disabled>Pieteikties gaidīšanas sarakstam</button>
+            <p class="wl-done" id="wlDone" hidden>Paldies! Esam Jūs pievienojuši gaidīšanas sarakstam un sazināsimies, tiklīdz atbrīvosies brīvs laiks.</p>
+          </div>
         </div>
       </div>
       <button type="button" class="close-link" data-close-reg>Aizvērt</button>
@@ -1027,6 +1057,42 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
     if (closeX) closeX.style.display = (name === 'form') ? '' : 'none';   // hide × on loading/success
     if (regCard) regCard.classList.toggle('success-wide', name === 'success');  // widen for video + Calendly
   };
+
+  // Calendly mode: 'LIVE' (show the booking widget) or 'WAITLIST' (slots closed -> show waitlist).
+  // The literal below is swapped server-side (api/home.js) from the Sheet's Settings tab.
+  // If the swap didn't run (static fallback), default to LIVE so booking always works.
+  var CALENDLY_MODE = '__CALENDLY_MODE__';
+  if (CALENDLY_MODE === '__CALENDLY_' + 'MODE__' || !CALENDLY_MODE) CALENDLY_MODE = 'LIVE';
+
+  // Waitlist view — shown in the success popup when CALENDLY_MODE === 'WAITLIST'.
+  function showWaitlist(){
+    const cal = document.getElementById('calMount');
+    const box = document.getElementById('waitlistBox');
+    if (cal) cal.hidden = true;
+    if (!box || box.dataset.wired) { if (box) box.hidden = false; return; }
+    box.hidden = false;
+    box.dataset.wired = '1';
+    const chk = document.getElementById('wlConsent');
+    const btn = document.getElementById('wlSubmit');
+    const done = document.getElementById('wlDone');
+    chk.addEventListener('change', () => { btn.disabled = !chk.checked; });
+    btn.addEventListener('click', async () => {
+      if (!chk.checked) return;
+      btn.disabled = true; btn.textContent = 'Nosūta…';
+      const wl = new URLSearchParams({
+        action: 'waitlist',
+        name: nameEl.value.trim(),
+        email: emailEl.value.trim(),
+        phone: phoneEl.value.trim(),
+        source: 'v3',
+      });
+      try { await fetch(SHEET_ENDPOINT, { method:'POST', mode:'no-cors', body: wl }); } catch(e){}
+      if (window.fbq) fbq('track', 'Lead', {source:'v3', type:'waitlist'});
+      chk.closest('.wl-check').hidden = true;
+      btn.hidden = true;
+      if (done) done.hidden = false;
+    });
+  }
 
   // Mount the Calendly inline widget (prefilled) inside the success view.
   function mountCalendly(name, email){
@@ -1138,9 +1204,13 @@ src="https://www.facebook.com/tr?id=828958808905391&ev=PageView&noscript=1"/></n
       // Google Apps Script doesn't send CORS headers, so we fire the request in
       // "no-cors" mode (the row is still written; we just can't read the reply).
       await fetch(SHEET_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload });
-      showView('success');   // popup now shows the video + Calendly booking
+      showView('success');   // popup now shows the video + Calendly booking (or the waitlist)
       if (window.fbq) { fbq('track', 'CompleteRegistration', {source:'v3'}); fbq('track', 'Lead', {source:'v3'}); }   // Meta conversion events
-      mountCalendly(nameEl.value.trim(), emailEl.value.trim());   // prefilled Calendly
+      if (CALENDLY_MODE === 'WAITLIST') {
+        showWaitlist();                                            // slots closed -> waitlist signup
+      } else {
+        mountCalendly(nameEl.value.trim(), emailEl.value.trim());   // prefilled Calendly
+      }
     } catch (err) {
       showView('form');
       alert('Diemžēl neizdevās nosūtīt. Lūdzu, mēģini vēlreiz vai raksti mums uz macibas@maciesvalodas.lv.');

@@ -66,6 +66,10 @@ module.exports = async (req, res) => {
     if (cfg && cfg.timeText) out = out.split(FB_TIME).join(cfg.timeText);
     const iso = cfg && cfg.datetime ? rigaISO(cfg.datetime) : null;
     if (iso) out = out.split(FB_ISO).join(iso);
+    // Calendly mode from the Sheet Settings tab: 'WAITLIST' hides the booking widget and
+    // shows the waitlist signup instead; anything else (incl. missing) stays 'LIVE'.
+    const mode = cfg && String(cfg.calendlyMode || '').toUpperCase() === 'WAITLIST' ? 'WAITLIST' : 'LIVE';
+    out = out.split('__CALENDLY_MODE__').join(mode);
     res.status(200).send(out);
   } catch (e) {
     res.status(200).send(html);   // Sheet unreachable -> serve the static fallback page
